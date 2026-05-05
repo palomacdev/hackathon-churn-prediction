@@ -1,0 +1,11 @@
+# requirements.txt
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+scipy
+xgboost
+joblib
+nbformat
+ipykernel
