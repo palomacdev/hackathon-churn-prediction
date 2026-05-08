@@ -25,7 +25,7 @@ Este projeto foi desenvolvido para o **Hackathon de Dados**, com foco em **Decis
 A solução cobre o pipeline completo de dados:
 
 ```
-CSV bruto → ETL → SQLite (Star Schema) → EDA → ML → Score → Dashboard → Insights
+CSV bruto → ETL → SQLite → EDA → ML → SHAP → Score → Dashboard → Insights
 ```
 
 **Dataset:** [Bank Customer Churn Prediction](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) — Kaggle  
