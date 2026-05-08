@@ -202,6 +202,6 @@ Os arquivos abaixo são gerados pela execução dos scripts e estão no `.gitign
 <div align="center">
 
 **Hackathon de Dados · Tema 4 — Decision Intelligence**  
-*Pipeline: CSV → ETL → EDA → ML → Score → Dashboard → Insights*
+*Pipeline: CSV → ETL → EDA → ML → SHAP → Score → Dashboard → Insights*
 
 </div>
