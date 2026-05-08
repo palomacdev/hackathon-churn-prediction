@@ -51,6 +51,9 @@ CSV bruto → ETL → SQLite → EDA → ML → SHAP → Score → Dashboard →
 dados/
 │   Bank Customer Churn Prediction.csv   ← fonte original (Kaggle)
 │
+docs/
+│   insights.md                         ← insights e ações recomendadas
+│
 etl/
 │   etl_churn.py                         ← pipeline Extract → Transform → Load
 │
@@ -66,10 +69,9 @@ sql/
 │   queries.sql                          ← 25 queries analíticas
 │
 powerbi/
-│   dashboard.pbix                       ← painel da diretoria
+│   dashboard.pbix                       ← painel 
 │
 dashboard.py                             ← dashboard Streamlit executivo
-flowcharts.md                            ← diagramas técnicos (Mermaid)
 requirements.txt
 .gitignore
 ```
