@@ -71,7 +71,6 @@ sql/
 powerbi/
 │   dashboard.pbix                       ← painel 
 │
-dashboard.py                             ← dashboard Streamlit executivo
 requirements.txt
 .gitignore
 ```
