@@ -56,7 +56,6 @@ etl/
 │
 notebooks/
 │   EDA_Churn.ipynb                      ← análise exploratória completa
-│   EDA_Documentacao.md                  ← documentação técnica da EDA
 │
 modelo/
 │   modelo_churn.py                      ← treino, avaliação e exportação
@@ -171,35 +170,6 @@ jupyter notebook  modelo_churn.ipynb
 # Gera: modelo_churn.pkl e clientes_score_powerbi.csv
 ```
 
-### 7. Suba o dashboard
-```bash
-streamlit run dashboard.py
-```
-
----
-
-## 📊 Dashboard Executivo
-
-O dashboard Streamlit cobre 5 páginas:
-
-| Página | Conteúdo |
-|---|---|
-| 🏠 Visão Executiva | KPIs principais, churn por país, faixa etária e produto |
-| 🔍 EDA & Perfil | Distribuições, correlações, heatmap multivariado |
-| 🤖 Modelo Preditivo | Curva ROC, matriz de confusão, feature importance |
-| ⚠️ Alertas de Risco | Threshold ajustável, lista de clientes em risco |
-| 💡 Recomendações | Insights, impacto financeiro e plano de ação |
-
----
-
-## 🗂️ Diagramas Técnicos
-
-Os flowcharts completos do pipeline estão em [`flowcharts.md`](./flowcharts.md):
-
-- **Flowchart 1 — EDA:** 9 seções da análise exploratória
-- **Flowchart 2 — ETL:** pipeline E→T→L e Star Schema
-- **Flowchart 3 — Modelo:** pré-processamento, treino, avaliação e produção
-
 ---
 
 ## 📦 Dependências
@@ -211,18 +181,6 @@ streamlit · plotly
 nbformat · ipykernel
 sqlite3 (built-in)
 ```
-
----
-
-## 👩‍💻 Time
-
-| Integrante | Responsabilidade |
-|---|---|
-| **Paloma** | Modelo de ML · Avaliação · Feature Engineering · ETL |
-| | EDA · Análise Exploratória |
-| | SQL · Queries Analíticas |
-| | Power BI · Dashboard da Diretoria |
-| | Dashboard Streamlit |
 
 ---
 
