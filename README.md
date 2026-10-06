@@ -1,22 +1,10 @@
-<div align="center">
+# Churn Prediction Intelligence
 
-# 🏦 Churn Prediction Intelligence
-### Sistema Inteligente de Análise Financeira e Geração de Insights
+**Decision Intelligence project for bank customer churn — from raw data to retention-oriented insights.**
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-189AB4?style=for-the-badge&logo=xgboost&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+Python · SQLite · scikit-learn · XGBoost · Power BI
 
-**Hackathon de Dados · Tema 4 — Decision Intelligence**
-
-*Prevemos quais clientes vão cancelar e recomendamos ações para retê-los.*
-
----
-
-</div>
+> Hackathon de Dados · Tema 4 — Decision Intelligence
 
 ## 📌 Sobre o Projeto
 
@@ -25,7 +13,7 @@ Este projeto foi desenvolvido para o **Hackathon de Dados**, com foco em **Decis
 A solução cobre o pipeline completo de dados:
 
 ```
-CSV bruto → ETL → SQLite → EDA → ML → SHAP → Score → Dashboard → Insights
+CSV bruto → ETL → SQLite → EDA → ML → Score → Dashboard → Insights
 ```
 
 **Dataset:** [Bank Customer Churn Prediction](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) — Kaggle  
@@ -61,9 +49,10 @@ notebooks/
 │   EDA_Churn.ipynb                      ← análise exploratória completa
 │
 modelo/
-│   modelo_churn.py                      ← treino, avaliação e exportação
-│   modelo_churn.pkl                     ← modelo serializado (gerado)
-│   clientes_score_powerbi.csv           ← scores para Power BI (gerado)
+│   modelo_churn.ipynb                   ← treino, avaliação e scoring
+│   feature_importance.png               ← importância das features
+│   metricas_modelo.png                  ← métricas e avaliação
+│   clientes_score_powerbi.csv           ← scores exportados para Power BI
 │
 sql/
 │   queries.sql                          ← 25 queries analíticas
@@ -152,6 +141,9 @@ pip install -r requirements.txt
 Acesse [kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) e salve o CSV em `dados/`.
 
 ### 4. Execute o ETL
+
+> **Nota de reprodutibilidade:** o script de ETL atualmente referencia o caminho usado no ambiente original de desenvolvimento (GitHub Codespaces). Antes de executá-lo em outro ambiente, ajuste `CSV_PATH` em `etl/etl_churn.py` para apontar para o CSV baixado.
+
 ```bash
 cd etl
 python etl_churn.py
@@ -164,12 +156,16 @@ cd notebooks
 jupyter notebook EDA_Churn.ipynb
 ```
 
-### 6. Treine o modelo
+### 6. Treine e avalie os modelos
+
+> O notebook de modelagem também referencia o caminho original do dataset em Codespaces. Ajuste a chamada `pd.read_csv(...)` para o caminho local antes da execução.
+
 ```bash
 cd modelo
-jupyter notebook  modelo_churn.ipynb
-# Gera: modelo_churn.pkl e clientes_score_powerbi.csv
+jupyter notebook modelo_churn.ipynb
 ```
+
+O notebook compara Regressão Logística, Random Forest, Gradient Boosting e XGBoost, avalia AUC-ROC e Precision-Recall, ajusta o threshold de decisão e exporta os scores usados na camada de BI.
 
 ---
 
@@ -185,22 +181,22 @@ sqlite3 (built-in)
 
 ---
 
-## 📁 Arquivos Gerados (não versionados)
+## 📁 Artefatos de execução
 
-Os arquivos abaixo são gerados pela execução dos scripts e estão no `.gitignore`:
+O pipeline produz artefatos de execução. Banco SQLite, logs e modelos serializados são ignorados pelo Git; o CSV de scores usado pelo dashboard está versionado neste repositório como artefato do projeto.
 
 | Arquivo | Gerado por |
 |---|---|
 | `dados/churn_dw.db` | `etl/etl_churn.py` |
 | `etl/etl_churn.log` | `etl/etl_churn.py` |
 | `modelo/modelo_churn.pkl` | `modelo/modelo_churn.py` |
-| `modelo/clientes_score_powerbi.csv` | `modelo/modelo_churn.py` |
+| `modelo/clientes_score_powerbi.csv` | notebook `modelo/modelo_churn.ipynb` (versionado para consumo pelo Power BI) |
 
 ---
 
 <div align="center">
 
 **Hackathon de Dados · Tema 4 — Decision Intelligence**  
-*Pipeline: CSV → ETL → EDA → ML → SHAP → Score → Dashboard → Insights*
+*Pipeline: CSV → ETL → EDA → ML → Score → Dashboard → Insights*
 
 </div>
