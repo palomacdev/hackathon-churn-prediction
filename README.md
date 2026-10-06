@@ -174,8 +174,7 @@ O notebook compara Regressão Logística, Random Forest, Gradient Boosting e XGB
 ```txt
 pandas · numpy · scikit-learn · xgboost · joblib
 matplotlib · seaborn · scipy
-streamlit · plotly
-nbformat · ipykernel
+shap · nbformat · ipykernel
 sqlite3 (built-in)
 ```
 
@@ -189,7 +188,6 @@ O pipeline produz artefatos de execução. Banco SQLite, logs e modelos serializ
 |---|---|
 | `dados/churn_dw.db` | `etl/etl_churn.py` |
 | `etl/etl_churn.log` | `etl/etl_churn.py` |
-| `modelo/modelo_churn.pkl` | `modelo/modelo_churn.py` |
 | `modelo/clientes_score_powerbi.csv` | notebook `modelo/modelo_churn.ipynb` (versionado para consumo pelo Power BI) |
 
 ---
